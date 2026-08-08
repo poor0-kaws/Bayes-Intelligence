@@ -6,7 +6,7 @@ export function Manifesto() {
           Manifesto
         </h2>
 
-        <div className="mt-12 flex flex-col gap-6 text-lg leading-relaxed text-muted-foreground">
+        <div className="mt-12 flex flex-col gap-6 font-sohne text-lg leading-relaxed text-muted-foreground">
           <p>
             We are Imperium. We are a small team building an AI-native hedge fund
             that treats capital allocation as an engineering problem, not a
@@ -36,7 +36,7 @@ export function Manifesto() {
           The Thesis
         </h3>
 
-        <div className="mt-6 flex flex-col gap-6 text-lg leading-relaxed text-muted-foreground">
+        <div className="mt-6 flex flex-col gap-6 font-sohne text-lg leading-relaxed text-muted-foreground">
           <p>
             The problem we are working on is one of the hardest open problems in
             finance: markets are adaptive, noisy, and adversarial. Most funds

@@ -8,10 +8,10 @@ export function Hero() {
         Imperium
       </h1>
       <p
-        className="animate-rise relative z-10 mt-6 text-sm font-medium tracking-[0.28em] text-muted-foreground sm:text-base"
+        className="animate-rise relative z-10 mt-6 font-sohne text-[14px] font-normal uppercase tracking-[0.1em] text-muted-foreground"
         style={{ animationDelay: "550ms" }}
       >
-        AI-NATIVE HEDGE FUND
+        AI-Native Hedge Fund
       </p>
 
       <a
@@ -20,7 +20,9 @@ export function Hero() {
         style={{ animationDelay: "1000ms" }}
         aria-label="Scroll to Manifesto"
       >
-        <span className="text-[10px] tracking-[0.3em]">SCROLL</span>
+        <span className="font-sohne text-[10px] font-medium uppercase tracking-[0.18em]">
+          Scroll
+        </span>
         <span className="h-10 w-px bg-brass/80" aria-hidden="true" />
       </a>
     </section>

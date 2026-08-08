@@ -7,6 +7,7 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-sohne: "Söhne", "Soehne", var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --color-brass: var(--brass);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
