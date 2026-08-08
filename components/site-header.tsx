@@ -1,3 +1,5 @@
+import { ArrowUpRight } from "lucide-react"
+
 export function SiteHeader() {
   return (
     <header className="absolute inset-x-0 top-0 z-20">
@@ -10,15 +12,31 @@ export function SiteHeader() {
           Imperium
         </a>
 
-        {/* Top-middle: Manifesto nav link */}
+        {/* Top-middle: Manifesto nav link with brass accent dot */}
         <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <a
             href="#manifesto"
-            className="text-xs font-medium tracking-[0.25em] text-muted-foreground underline-offset-8 transition-colors hover:text-foreground hover:underline sm:text-sm"
+            className="group flex items-center gap-2 text-xs font-medium tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
           >
+            <span
+              className="h-1 w-1 rounded-full bg-brass transition-transform group-hover:scale-150"
+              aria-hidden="true"
+            />
             MANIFESTO
           </a>
         </nav>
+
+        {/* Top-right: Contact link */}
+        <a
+          href="#contact"
+          className="group flex items-center gap-1.5 text-xs font-medium tracking-[0.25em] text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
+        >
+          CONTACT
+          <ArrowUpRight
+            className="h-3.5 w-3.5 transition-colors group-hover:text-brass"
+            aria-hidden="true"
+          />
+        </a>
       </div>
     </header>
   )

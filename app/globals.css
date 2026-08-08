@@ -7,6 +7,7 @@
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --color-brass: var(--brass);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -61,7 +62,8 @@
   --secondary: oklch(0.26 0.04 259);
   --secondary-foreground: oklch(0.97 0.005 255);
   --muted: oklch(0.26 0.04 259);
-  --muted-foreground: oklch(0.68 0.03 258);
+  --muted-foreground: oklch(0.75 0.028 258);
+  --brass: #b8a276;
   --accent: oklch(0.26 0.04 259);
   --accent-foreground: oklch(0.97 0.005 255);
   --destructive: oklch(0.62 0.2 25);
@@ -127,5 +129,56 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Barely-visible radial light behind the hero title */
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    60% 45% at 50% 42%,
+    oklch(0.42 0.05 258 / 0.55) 0%,
+    oklch(0.28 0.045 258 / 0.25) 35%,
+    transparent 70%
+  );
+}
+
+/* Very fine film grain overlay */
+.film-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Gentle staggered entrance */
+@keyframes imperium-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-rise {
+  opacity: 0;
+  animation: imperium-rise 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+    opacity: 1;
   }
 }
