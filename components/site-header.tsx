@@ -1,3 +1,5 @@
+// This component receives no data and outputs the navigation shown at the top of the page.
+import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
 
 export function SiteHeader() {
@@ -10,10 +12,13 @@ export function SiteHeader() {
           className="inline-flex items-center transition-opacity hover:opacity-70"
           aria-label="Imperium — home"
         >
-          <img
+          <Image
             src="/imperium-monogram.png"
             alt="Imperium monogram"
-            className="h-8 w-auto"
+            width={1254}
+            height={1254}
+            className="h-10 w-10 sm:h-11 sm:w-11"
+            priority
           />
         </a>
 
@@ -33,7 +38,7 @@ export function SiteHeader() {
 
         {/* Top-right: Contact link */}
         <a
-          href="#contact"
+          href="mailto:kswaroop.hebbar@gmail.com"
           className="group flex items-center gap-1.5 font-sohne text-[12px] font-medium uppercase tracking-[0.14em] text-muted-foreground transition-colors hover:text-foreground"
         >
           Contact
