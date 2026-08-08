@@ -4,7 +4,7 @@ import { Manifesto } from "@/components/manifesto"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-background text-foreground">
+    <div id="top" className="relative min-h-screen bg-background text-foreground">
       <SiteHeader />
       <main>
         <Hero />
