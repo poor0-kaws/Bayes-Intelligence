@@ -18,10 +18,9 @@ export function Manifesto() {
             believe a small team can now go head-to-head against a larger company.
           </p>
           <p>
-            AI agents have already reached a point where they can execute complex
-            research and analysis and provide quality results that outperform an
-            analyst. These capabilities will only improve over the next few
-            months.
+            AI agents have reached a point where they can execute complex research
+            and analysis and provide quality results that outperform an analyst.
+            These capabilities will only improve over the next few months.
           </p>
           <p>
             We are building purpose-built tools placed into every part of our
@@ -29,8 +28,8 @@ export function Manifesto() {
             of thousands.
           </p>
           <p>
-            We believe AI will strengthen our decision-making process; therefore,
-            the team makes every final call.
+            We believe AI will strengthen our decision-making ; therefore, the
+            team makes every final call.
           </p>
         </div>
       </div>
