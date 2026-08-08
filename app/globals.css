@@ -62,7 +62,7 @@
   --secondary: oklch(0.26 0.04 259);
   --secondary-foreground: oklch(0.97 0.005 255);
   --muted: oklch(0.26 0.04 259);
-  --muted-foreground: oklch(0.75 0.028 258);
+  --muted-foreground: oklch(0.82 0.022 258);
   --brass: #b8a276;
   --accent: oklch(0.26 0.04 259);
   --accent-foreground: oklch(0.97 0.005 255);
@@ -130,20 +130,29 @@
   body {
     @apply bg-background text-foreground;
   }
+  .font-serif {
+    font-optical-sizing: auto;
+  }
 }
 
-/* Barely-visible radial light behind the hero title */
+/* Barely-visible radial light behind the hero title — true round glow */
 .hero-glow::before {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 40%;
+  aspect-ratio: 1;
+  width: min(1600px, 150vw);
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
   pointer-events: none;
   background: radial-gradient(
-    60% 45% at 50% 42%,
-    oklch(0.42 0.05 258 / 0.55) 0%,
-    oklch(0.28 0.045 258 / 0.25) 35%,
-    transparent 70%
+    circle,
+    oklch(0.42 0.05 258 / 0.32) 0%,
+    oklch(0.3 0.045 258 / 0.12) 42%,
+    transparent 72%
   );
+  filter: blur(40px);
 }
 
 /* Very fine film grain overlay */

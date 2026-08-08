@@ -1,7 +1,10 @@
 export function Hero() {
   return (
     <section className="hero-glow film-grain relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-      <h1 className="animate-rise relative z-10 font-serif text-6xl font-normal leading-none tracking-tight text-balance sm:text-8xl md:text-9xl">
+      <h1
+        className="animate-rise relative z-10 font-serif text-6xl font-normal leading-none text-balance sm:text-8xl md:text-9xl"
+        style={{ letterSpacing: "-0.025em", fontOpticalSizing: "auto" }}
+      >
         Imperium
       </h1>
       <p

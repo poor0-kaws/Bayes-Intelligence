@@ -7,7 +7,8 @@ export function SiteHeader() {
         {/* Top-left: Imperium serif wordmark as the logo */}
         <a
           href="#top"
-          className="font-serif text-2xl leading-none tracking-tight text-foreground transition-opacity hover:opacity-70 sm:text-3xl"
+          className="font-serif text-xl font-medium leading-none text-foreground transition-opacity hover:opacity-70 sm:text-2xl"
+          style={{ letterSpacing: "-0.01em", fontOpticalSizing: "auto" }}
         >
           Imperium
         </a>
