@@ -1,17 +1,20 @@
-// This component receives no data and outputs the light manifesto section below the hero.
 export function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="scroll-mt-24 border-t border-brass/40 bg-primary px-6 py-24 text-primary-foreground sm:py-32"
+      className="scroll-mt-16 bg-white px-5 py-24 text-black sm:px-8 sm:py-32"
     >
-      <div className="mx-auto max-w-3xl">
-        <div className="mb-7 h-px w-12 bg-brass" aria-hidden="true" />
-        <h2 className="font-serif text-6xl font-normal leading-none sm:text-7xl">
-          Manifesto
-        </h2>
+      <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-black/45">
+            01 / Perspective
+          </p>
+          <h2 className="mt-6 text-5xl font-medium leading-none tracking-tight sm:text-7xl">
+            Manifesto
+          </h2>
+        </div>
 
-        <div className="mt-12 flex flex-col gap-6 font-sohne text-lg leading-relaxed text-primary-foreground/70">
+        <div className="flex max-w-3xl flex-col gap-8 text-lg leading-relaxed text-black/70 sm:text-xl">
           <p>
             For decades, hedge funds have employed hundreds, if not thousands, to
             research, monitor risk, and test ideas to run their operation. We
