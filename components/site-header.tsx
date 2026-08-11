@@ -8,18 +8,18 @@ export function SiteHeader() {
         <a
           href="#top"
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-60"
-          aria-label="nullspace home"
+          aria-label="Null Space home"
         >
           <Image
-            src="/nullspace-mark.png"
-            alt="nullspace mark"
+            src="/null-space-mark.png"
+            alt="Null Space mark"
             width={1024}
             height={1024}
             className="h-[50px] w-[50px] invert"
             priority
           />
           <span className="text-xl font-medium tracking-tight text-white">
-            nullspace
+            Null Space
           </span>
         </a>
 
