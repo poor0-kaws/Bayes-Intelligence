@@ -3,8 +3,8 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'NullSpace | AI-Native Hedge Fund',
-  description: 'NullSpace is an AI-native hedge fund.',
+  title: 'nullspace | AI-Native Hedge Fund',
+  description: 'nullspace is an AI-native hedge fund.',
   icons: {
     icon: '/nullspace-mark.png',
     apple: '/nullspace-mark.png',
