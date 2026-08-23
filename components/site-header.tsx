@@ -8,18 +8,18 @@ export function SiteHeader() {
         <a
           href="#top"
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-60"
-          aria-label="Null Space home"
+          aria-label="Forsyn home"
         >
           <Image
-            src="/null-space-mark.png"
-            alt="Null Space mark"
+            src="/forsyn-mark.png"
+            alt="Forsyn mark"
             width={1024}
             height={1024}
             className="h-[50px] w-[50px] invert"
             priority
           />
           <span className="text-xl font-medium tracking-tight text-white">
-            Null Space
+            Forsyn
           </span>
         </a>
 

@@ -20,7 +20,7 @@ export function Hero() {
             AI-native hedge fund
           </p>
           <h1 className="mt-7 max-w-3xl text-6xl font-medium leading-[0.94] tracking-tight sm:text-8xl lg:text-[7.5rem]">
-            Null Space
+            Forsyn
           </h1>
           <p className="mt-8 max-w-[calc(100vw-2.5rem)] text-lg leading-relaxed text-white/65 sm:max-w-lg sm:text-xl">
             Clear thinking for a world with more information than time.
