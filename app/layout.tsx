@@ -3,17 +3,17 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Forsyn | AI-Native Hedge Fund',
-  description: 'Forsyn is an AI-native hedge fund.',
+  title: 'Forsium | AI-Native Hedge Fund',
+  description: 'Forsium is an AI-native hedge fund.',
   icons: {
-    icon: '/forsyn-mark.png',
-    apple: '/forsyn-mark.png',
+    icon: '/forsium-mark.png',
+    apple: '/forsium-mark.png',
   },
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'dark',
-  themeColor: '#000000',
+  colorScheme: 'light',
+  themeColor: '#ffffff',
 }
 
 export default function RootLayout({

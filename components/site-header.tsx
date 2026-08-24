@@ -3,30 +3,30 @@ import { ArrowUpRight } from "lucide-react"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 bg-black">
-      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-2 sm:px-4">
+    <header className="sticky top-0 z-20 bg-background/90 backdrop-blur-md">
+      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
         <a
           href="#top"
           className="inline-flex items-center gap-3 transition-opacity hover:opacity-60"
-          aria-label="Forsyn home"
+          aria-label="Forsium home"
         >
           <Image
-            src="/forsyn-mark.png"
-            alt="Forsyn mark"
+            src="/forsium-mark.png"
+            alt="Forsium mark"
             width={1024}
             height={1024}
-            className="h-[50px] w-[50px] invert"
+            className="h-11 w-11"
             priority
           />
-          <span className="text-xl font-medium tracking-tight text-white">
-            Forsyn
+          <span className="text-xl font-medium tracking-tight text-foreground">
+            Forsium
           </span>
         </a>
 
         <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 sm:block">
           <a
             href="#manifesto"
-            className="text-base text-white transition-colors hover:text-white"
+            className="text-base text-foreground transition-colors hover:text-accent"
           >
             Manifesto
           </a>
@@ -34,7 +34,7 @@ export function SiteHeader() {
 
         <a
           href="mailto:kswaroop.hebbar@gmail.com"
-          className="group inline-flex items-center gap-1.5 text-base font-medium text-white transition-opacity hover:opacity-60"
+          className="group inline-flex items-center gap-1.5 text-base font-medium text-foreground transition-colors hover:text-accent"
         >
           Contact
           <ArrowUpRight
