@@ -1,46 +1,25 @@
-import Image from "next/image"
-import { ArrowUpRight } from "lucide-react"
+import { LogoMark } from "@/components/logo-mark"
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 bg-background/90 backdrop-blur-md">
-      <div className="relative mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+    <header className="absolute inset-x-0 top-0 z-20">
+      <div className="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-5 sm:px-8">
         <a
           href="#top"
-          className="inline-flex items-center gap-3 transition-opacity hover:opacity-60"
-          aria-label="Forsium home"
+          className="inline-flex items-center gap-2 text-foreground transition-opacity hover:opacity-60 active:translate-y-px"
+          aria-label="Bayesian Intelligence home"
         >
-          <Image
-            src="/forsium-mark.png"
-            alt="Forsium mark"
-            width={1024}
-            height={1024}
-            className="h-11 w-11"
-            priority
-          />
-          <span className="text-xl font-medium tracking-tight text-foreground">
-            Forsium
+          <LogoMark />
+          <span className="text-base font-medium tracking-[-0.025em] sm:text-lg">
+            Bayesian Intelligence
           </span>
         </a>
 
-        <nav className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 sm:block">
-          <a
-            href="#manifesto"
-            className="text-base text-foreground transition-colors hover:text-accent"
-          >
-            Manifesto
-          </a>
-        </nav>
-
         <a
           href="mailto:kswaroop.hebbar@gmail.com"
-          className="group inline-flex items-center gap-1.5 text-base font-medium text-foreground transition-colors hover:text-accent"
+          className="text-base font-medium tracking-[-0.025em] text-foreground underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground active:translate-y-px sm:text-lg"
         >
           Contact
-          <ArrowUpRight
-            className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-            aria-hidden="true"
-          />
         </a>
       </div>
     </header>

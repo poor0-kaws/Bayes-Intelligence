@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#f9fafc" />
+  <text
+    x="32"
+    y="50"
+    fill="#0a2342"
+    font-family="STIX Two Math, Cambria Math, Times New Roman, serif"
+    font-size="58"
+    text-anchor="middle"
+  >𝜃</text>
+</svg>
