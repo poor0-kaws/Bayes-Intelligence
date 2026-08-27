@@ -18,8 +18,7 @@ export default function Home() {
       </section>
 
       <p className="absolute bottom-2 left-5 z-10 w-[calc(100%-2.5rem)] max-w-3xl text-[clamp(0.8rem,1.15vw,1.125rem)] leading-[1.35] tracking-[-0.015em] sm:bottom-3 sm:left-8">
-        Bayesian Intelligence is an AI-native hedge fund solving institutional
-        inefficiency.
+        AI-native hedge fund solving institutional inefficiency.
       </p>
     </main>
   )
