@@ -10,10 +10,10 @@ export default function Home() {
       <SiteHeader />
 
       <section
-        aria-label="Bayesian Intelligence"
+        aria-label="Bayes Intelligence"
         className="grid min-h-[100dvh] place-items-center px-5 py-24 sm:px-8"
       >
-        <h1 className="sr-only">Bayesian Intelligence</h1>
+        <h1 className="sr-only">Bayes Intelligence</h1>
         <AnimatedTheta />
       </section>
 
