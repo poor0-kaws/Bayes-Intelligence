@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Bayesian Intelligence | AI-Native Hedge Fund',
+  title: 'Bayes Intelligence | AI-Native Hedge Fund',
   description:
-    'Bayesian Intelligence is an AI-native investment firm built for reasoning under uncertainty.',
+    'Bayes Intelligence is an AI-native investment firm built for reasoning under uncertainty.',
   icons: {
-    icon: '/bayesian-intelligence-mark.svg',
+    icon: '/bayes-intelligence-mark.svg',
   },
 }
 
