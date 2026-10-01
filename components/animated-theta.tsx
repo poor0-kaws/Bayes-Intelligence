@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion"
 
 const thetaStyle =
-  "absolute font-serif text-[clamp(12rem,38vw,34rem)] leading-none text-foreground"
+  "absolute -translate-x-[0.02em] translate-y-[0.09em] font-serif text-[clamp(12rem,30vw,30rem)] leading-none text-foreground"
 
 export function AnimatedTheta() {
   const shouldReduceMotion = useReducedMotion()
@@ -11,7 +11,7 @@ export function AnimatedTheta() {
   if (shouldReduceMotion) {
     return (
       <div
-        className="relative flex aspect-square w-[min(82vw,72dvh)] max-w-[680px] items-center justify-center"
+        className="relative flex aspect-square w-full max-w-[600px] items-center justify-center"
         aria-hidden="true"
       >
         <span className={thetaStyle}>𝜃</span>
@@ -21,7 +21,7 @@ export function AnimatedTheta() {
 
   return (
     <div
-      className="relative flex aspect-square w-[min(82vw,72dvh)] max-w-[680px] items-center justify-center"
+      className="relative flex aspect-square w-full max-w-[600px] items-center justify-center"
       aria-hidden="true"
     >
       <motion.span
