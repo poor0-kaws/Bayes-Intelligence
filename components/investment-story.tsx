@@ -1,152 +1,135 @@
-"use client"
+"use client";
 
-import { motion, useReducedMotion } from "framer-motion"
-import { ArrowDown, ArrowUpRight, Cpu, Network, Scale, ScanSearch } from "lucide-react"
+import { type ReactNode } from "react";
+import { motion, MotionConfig, useReducedMotion } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { AnimatedTheta } from "@/components/animated-theta";
+import { LogoMark } from "@/components/logo-mark";
+import { AnimatedLink } from "@/components/ui/animated-link";
+import { TextureButton } from "@/components/ui/texture-button";
 
-import { AnimatedTheta } from "@/components/animated-theta"
-import { buttonVariants } from "@/components/ui/button"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { cn } from "@/lib/utils"
-
-const pillars = [
-  {
-    title: "Research at scale.",
-    description: "AI agents expand what a lean team can research, analyze and monitor.",
-    icon: ScanSearch,
-    label: "RESEARCH",
-  },
-  {
-    title: "Grounded in financial reality.",
-    description:
-      "We post-train models to reason from financial evidence and interpret market sentiment, bringing financial expertise and market awareness into AI research.",
-    icon: Scale,
-    label: "REASONING",
-  },
-  {
-    title: "Engineering the investment process.",
-    description:
-      "We build our own investment systems for AI infrastructure, turning research into knowledge that compounds.",
-    icon: Cpu,
-    label: "SYSTEMS",
-  },
-  {
-    title: "Long/short, with discipline.",
-    description:
-      "We pursue opportunities on both sides of the market, with deliberate position sizing and portfolio risk management.",
-    icon: Network,
-    label: "PORTFOLIO",
-  },
-]
-
-export function InvestmentStory() {
-  const shouldReduceMotion = useReducedMotion()
-  const reveal = {
-    initial: { opacity: 1, y: 0 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.15 },
-  }
-
+function Reveal({
+  children,
+  className = "",
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  const reducedMotion = useReducedMotion();
   return (
-    <>
+    <motion.div
+      initial={false}
+      whileInView={reducedMotion ? undefined : { y: [14, 0] }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+}
+export function InvestmentStory() {
+  return (
+    <MotionConfig reducedMotion="user">
       <section
         aria-labelledby="hero-heading"
-        className="relative mx-auto grid max-w-[1600px] items-center gap-10 px-5 pt-36 pb-16 sm:px-8 sm:pt-44 sm:pb-20 lg:min-h-[760px] lg:grid-cols-[1.15fr_0.85fr] lg:gap-0 lg:pt-32 lg:pb-16"
+        className="site-container hero-section"
       >
-        <motion.div
-          {...reveal}
-          animate={shouldReduceMotion ? undefined : { y: [12, 0] }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative z-10 max-w-[850px]"
-        >
-          <h1
-            id="hero-heading"
-            className="max-w-[850px] text-[clamp(3.25rem,6.6vw,7rem)] leading-[1.02] font-medium tracking-[-0.065em]"
-          >
-            Built to compete<br />beyond our size.
+        <Reveal className="hero-copy">
+          <h1 id="hero-heading" className="hero-title">
+            Built to compete
+            <br />
+            beyond our size.
           </h1>
-          <a
-            href="#approach"
-            className={cn(buttonVariants({ variant: "default" }), "mt-9 h-12 gap-6 rounded-none px-5 text-sm")}
-          >
-            Explore our approach
-            <ArrowDown className="size-4" aria-hidden="true" />
-          </a>
-        </motion.div>
-
-        <div className="relative flex min-w-0 items-center justify-center max-lg:hidden">
-          <div className="absolute top-1/2 left-1/2 aspect-square w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-foreground/10" aria-hidden="true" />
-          <div className="absolute top-1/2 left-1/2 aspect-square w-[65%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-foreground/5" aria-hidden="true" />
+          <div className="mt-8 flex flex-wrap items-center gap-7">
+            <TextureButton
+              asChild
+              className="inline-flex w-fit shrink-0 [&>span]:w-auto focus-visible:outline-2 focus-visible:outline-offset-4"
+            >
+              <a href="#thesis">
+                <span className="flex items-center gap-7 py-1.5">
+                  Read our thesis{" "}
+                  <ArrowDown className="size-3.5" aria-hidden="true" />
+                </span>
+              </a>
+            </TextureButton>
+            <AnimatedLink
+              href="mailto:kswaroop.hebbar@gmail.com"
+              className="text-xs"
+            >
+              Start a conversation
+            </AnimatedLink>
+          </div>
+        </Reveal>
+        <Reveal className="hero-visual">
           <AnimatedTheta />
-        </div>
+          <p className="signal-caption">
+            Evidence <span aria-hidden="true">→</span> Intelligence{" "}
+            <span aria-hidden="true">→</span> Decisions
+          </p>
+        </Reveal>
       </section>
 
       <section
-        id="approach"
-        aria-labelledby="approach-heading"
-        className="scroll-mt-8 border-t border-border"
+        id="thesis"
+        aria-labelledby="thesis-heading"
+        className="market-thesis-section section-space border-t border-border"
       >
-        <div className="mx-auto max-w-[1600px] px-5 py-16 sm:px-8 sm:py-24">
-          <motion.div
-            {...reveal}
-            className="grid gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-x-24 lg:gap-y-5"
-          >
-            <h2 id="approach-heading" className="max-w-md text-3xl leading-tight font-medium tracking-[-0.045em] sm:text-4xl">
-              A lean team.<br />An institutional ambition.
-            </h2>
-            <dl className="grid max-w-[640px] gap-7">
-              <div className="border-l border-border pl-5">
-                <dt className="mb-2 font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">Traditional firms</dt>
-                <dd className="text-lg leading-relaxed tracking-[-0.02em] text-muted-foreground sm:text-xl">
-                  Large teams research markets, test ideas and monitor risk.
-                </dd>
-              </div>
-              <div className="border-l border-foreground/40 pl-5">
-                <dt className="mb-2 font-mono text-[10px] tracking-[0.16em] text-muted-foreground uppercase">Our approach</dt>
-                <dd className="text-lg leading-relaxed tracking-[-0.02em] sm:text-xl">
-                  We believe AI helps a lean team compete with larger institutions by building that capability into software.
-                </dd>
-              </div>
-            </dl>
-          </motion.div>
-
-          <ul className="mt-14 grid gap-px border border-border bg-border sm:mt-16 md:grid-cols-2 xl:grid-cols-4" aria-label="Our investment principles">
-            {pillars.map((pillar, index) => (
-              <motion.li
-                key={pillar.title}
-                {...reveal}
-                whileInView={shouldReduceMotion ? reveal.whileInView : { y: [16, 0] }}
-                transition={{ duration: 0.5, delay: index * 0.08, ease: "easeOut" }}
-                className="h-full bg-background"
-              >
-                <Card className="group h-full gap-7 rounded-none bg-transparent py-7 ring-0 transition-colors duration-300 hover:bg-secondary/60 sm:py-8">
-                  <CardHeader className="px-6 sm:px-7">
-                    <div className="mb-8 flex items-center justify-between">
-                      <pillar.icon className="size-7 stroke-[1.25] transition-transform duration-300 group-hover:-translate-y-1" aria-hidden="true" />
-                      <span className="font-mono text-[10px] tracking-widest text-muted-foreground">0{index + 1}</span>
-                    </div>
-                    <p className="mb-3 font-mono text-[10px] tracking-[0.16em] text-muted-foreground">{pillar.label}</p>
-                    <h3 className="max-w-[240px] text-xl leading-snug font-medium tracking-[-0.035em]">{pillar.title}</h3>
-                  </CardHeader>
-                  <CardContent className="px-6 sm:px-7">
-                    <p className="text-sm leading-7 text-muted-foreground">{pillar.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.li>
-            ))}
-          </ul>
+        <div className="site-container">
+          <h2 id="thesis-heading" className="sr-only">
+            Our investment thesis
+          </h2>
+          <Reveal className="market-thesis">
+            <div className="market-thesis-context">
+              <p>
+                We have seen several revolutions in the financial markets over
+                the decades. Advances in computer technology gave rise to
+                quantitative firms, which dominated by capitalizing on the
+                synergy from computing power, market data and mathematical
+                models.
+              </p>
+              <p>
+                We are now seeing a major shift. AI capabilities have reached a
+                threshold where they can analyze vast amounts of information,
+                test investment ideas and support decisions across financial
+                markets. This shift is creating a new category of investment
+                companies that combine established investment principles with
+                the latest AI models.
+              </p>
+            </div>
+            <p className="market-thesis-statement">
+              We are an AI research lab first and a hedge fund second,
+              post-training advanced models to uncover market edges and generate
+              alpha.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-6 px-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div>
-            <p className="text-sm font-medium tracking-[-0.02em]">Bayes Intelligence</p>
-          </div>
-          <a href="mailto:kswaroop.hebbar@gmail.com" className="inline-flex w-fit items-center gap-3 text-sm underline decoration-foreground/25 underline-offset-4 transition-colors hover:decoration-foreground">
-            Start a conversation <ArrowUpRight className="size-4" aria-hidden="true" />
+      <footer className="site-container pb-7 pt-10">
+        <div className="flex flex-col justify-between gap-6 border-b border-border pb-8 sm:flex-row sm:items-center">
+          <a href="#top" className="flex w-fit items-center gap-3">
+            <LogoMark />
+            <span className="text-sm font-medium tracking-tight">
+              Bayes Intelligence
+            </span>
           </a>
+          <div className="flex gap-7 text-xs text-muted-foreground">
+            <AnimatedLink href="#thesis">Our thesis</AnimatedLink>
+            <AnimatedLink href="mailto:kswaroop.hebbar@gmail.com">
+              Contact{" "}
+              <ArrowUpRight className="ml-1 inline size-3" aria-hidden="true" />
+            </AnimatedLink>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-col justify-between gap-3 text-[10px] leading-5 text-muted-foreground sm:flex-row">
+          <p>© {new Date().getFullYear()} Bayes Intelligence</p>
+          <p>
+            This website is for informational purposes and does not constitute
+            an offer to invest.
+          </p>
         </div>
       </footer>
-    </>
-  )
+    </MotionConfig>
+  );
 }
