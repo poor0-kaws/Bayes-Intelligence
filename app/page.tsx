@@ -37,7 +37,7 @@ export default function Home() {
             href="mailto:kswaroop.hebbar@gmail.com"
             title="Start a conversation with Bayes Intelligence"
           >
-            Email: kswaroop.hebbar@gmail.com
+            Email
           </a>
         </p>
       </section>
