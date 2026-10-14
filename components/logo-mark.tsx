@@ -6,5 +6,5 @@ export function LogoMark() {
     >
       𝜃
     </span>
-  )
+  );
 }

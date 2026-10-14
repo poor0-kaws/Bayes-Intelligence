@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import 'shadcn/tailwind.css';
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -72,7 +72,7 @@
   --chart-3: #52657d;
   --chart-4: #8c9aab;
   --chart-5: #c5cdd7;
-  --radius: 0;
+  --radius: 0.75rem;
   --sidebar: #f9fafc;
   --sidebar-foreground: #0a2342;
   --sidebar-primary: #0a2342;
@@ -107,5 +107,166 @@ html {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+.site-container {
+  width: min(100% - 96px, 1200px);
+  margin-inline: auto;
+}
+.section-space {
+  padding-block: 88px;
+  scroll-margin-top: 32px;
+}
+.hero-section {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: center;
+  padding-block: 66px 92px;
+}
+.hero-title {
+  font-size: clamp(44px, 5.3vw, 68px);
+  font-weight: 500;
+  line-height: 1.07;
+  letter-spacing: -0.055em;
+}
+.hero-visual {
+  min-width: 0;
+}
+.signal-art {
+  position: relative;
+  aspect-ratio: 1.12;
+  width: 100%;
+  background: radial-gradient(ellipse at center, #edf1f6 0%, transparent 67%);
+}
+.signal-grid {
+  position: absolute;
+  inset: 10% 0 7%;
+  background-image:
+    linear-gradient(#0a23420b 1px, transparent 1px),
+    linear-gradient(90deg, #0a23420b 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse, #000 25%, transparent 72%);
+}
+.signal-curves {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 5px;
+}
+@media (min-width: 1400px) {
+  .hero-section {
+    padding-block: 80px 104px;
+  }
+}
+@media (max-width: 1023px) {
+  .site-container {
+    width: calc(100% - 56px);
+  }
+  .hero-section {
+    gap: 0;
+  }
+  .hero-title {
+    font-size: clamp(42px, 6vw, 62px);
+  }
+  .section-space {
+    padding-block: 64px;
+  }
+}
+@media (max-width: 767px) {
+  .site-container {
+    width: calc(100% - 40px);
+  }
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding-top: 44px;
+    padding-bottom: 65px;
+  }
+  .hero-title {
+    font-size: clamp(42px, 9vw, 64px);
+  }
+  .hero-visual {
+    max-width: 480px;
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 20px;
+  }
+  .section-space {
+    padding-block: 54px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.signal-caption {
+  margin-top: -12px;
+  padding-left: 8%;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+@media (max-width: 767px) {
+  .signal-caption {
+    font-size: 8px;
+  }
+}
+
+.market-thesis-section {
+  /* Leave enough room after the anchor for short pages to scroll it into view. */
+  min-height: calc(100svh - 160px);
+  display: flex;
+  align-items: center;
+}
+.market-thesis {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 100px;
+}
+.market-thesis-context {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted-foreground);
+}
+.market-thesis-context p + p {
+  margin-top: 24px;
+}
+.market-thesis-statement {
+  border-left: 1px solid var(--border);
+  padding-left: 36px;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+@media (max-width: 1023px) {
+  .market-thesis {
+    gap: 48px;
+  }
+  .market-thesis-statement {
+    padding-left: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .market-thesis {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .market-thesis-statement {
+    padding-left: 20px;
   }
 }
