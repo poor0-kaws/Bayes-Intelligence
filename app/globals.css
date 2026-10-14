@@ -1,243 +1,47 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --font-sans: var(--font-geist), Arial, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  --font-serif: "STIX Two Math", "Cambria Math", "Times New Roman", serif;
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-positive: var(--positive);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --color-foreground: var(--foreground);
-  --color-background: var(--background);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
+body {
+  margin: 18px;
+  padding-top: 20px;
+  background: white;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
 }
 
-:root {
-  color-scheme: light;
-  --background: #f9fafc;
-  --foreground: #0a2342;
-  --card: #f9fafc;
-  --card-foreground: #0a2342;
-  --popover: #f9fafc;
-  --popover-foreground: #0a2342;
-  --primary: #0a2342;
-  --primary-foreground: #f9fafc;
-  --secondary: #edf1f6;
-  --secondary-foreground: #0a2342;
-  --muted: #edf1f6;
-  --muted-foreground: #52657d;
-  --accent: #0a2342;
-  --accent-foreground: #f9fafc;
-  --positive: #18794e;
-  --destructive: #b42318;
-  --border: rgb(10 35 66 / 16%);
-  --input: rgb(10 35 66 / 18%);
-  --ring: #0a2342;
-  --chart-1: #0a2342;
-  --chart-2: #274766;
-  --chart-3: #52657d;
-  --chart-4: #8c9aab;
-  --chart-5: #c5cdd7;
-  --radius: 0.75rem;
-  --sidebar: #f9fafc;
-  --sidebar-foreground: #0a2342;
-  --sidebar-primary: #0a2342;
-  --sidebar-primary-foreground: #f9fafc;
-  --sidebar-accent: #edf1f6;
-  --sidebar-accent-foreground: #0a2342;
-  --sidebar-border: rgb(10 35 66 / 16%);
-  --sidebar-ring: #0a2342;
+main {
+  max-width: 780px;
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
+h1 {
+  margin: 0 0 38px;
+  font-size: 36px;
+}
 
+h2 {
+  margin: 32px 0 24px;
+  font-size: 28px;
+}
+
+p {
+  margin: 0 0 24px;
+  line-height: 1.55;
+}
+
+section[aria-labelledby="contact-heading"] > p {
+  margin-left: 2px;
+}
+
+footer {
+  margin-top: 48px;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
   body {
-    @apply bg-background text-foreground;
-    min-width: 320px;
-    overflow-x: hidden;
+    margin: 16px;
+    padding-top: 12px;
   }
 
-  ::selection {
-    color: var(--accent-foreground);
-    background: var(--accent);
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-.site-container {
-  width: min(100% - 96px, 1200px);
-  margin-inline: auto;
-}
-.section-space {
-  padding-block: 88px;
-  scroll-margin-top: 32px;
-}
-.hero-section {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 48px;
-  padding-block: 52px 88px;
-}
-.hero-copy {
-  max-width: 820px;
-  width: 100%;
-}
-.hero-title {
-  font-size: clamp(36px, 4.8vw, 66px);
-  font-weight: 400;
-  line-height: 1.12;
-  letter-spacing: -0.045em;
-}
-.animated-text-line {
-  display: block;
-}
-.animated-word-mask {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  padding-bottom: 0.12em;
-  margin-bottom: -0.12em;
-}
-.animated-word {
-  display: inline-block;
-}
-.research-lattice {
-  width: min(100%, 440px);
-  justify-self: end;
-  color: var(--foreground);
-}
-.research-lattice svg {
-  display: block;
-  width: 100%;
-}
-
-:focus-visible {
-  outline: 2px solid var(--ring);
-  outline-offset: 5px;
-}
-@media (max-width: 1023px) {
-  .site-container {
-    width: calc(100% - 56px);
-  }
-  .hero-section {
-    grid-template-columns: 1fr;
-  }
-  .research-lattice {
-    display: none;
-  }
-  .section-space {
-    padding-block: 64px;
-  }
-}
-@media (max-width: 767px) {
-  .site-container {
-    width: calc(100% - 40px);
-  }
-  .hero-section {
-    padding-block: 40px 64px;
-  }
-  .section-space {
-    padding-block: 54px;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-.market-thesis-section {
-  /* Leave enough room after the anchor for short pages to scroll it into view. */
-  min-height: calc(100svh - 160px);
-  display: flex;
-  align-items: center;
-}
-.market-thesis {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  align-items: start;
-  gap: 100px;
-}
-.market-thesis-context {
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--muted-foreground);
-}
-.market-thesis-context p + p {
-  margin-top: 24px;
-}
-.market-thesis-statement {
-  position: relative;
-  padding-left: 36px;
-  font-size: clamp(24px, 2.4vw, 30px);
-  font-weight: 500;
-  line-height: 1.4;
-  letter-spacing: -0.035em;
-}
-@media (max-width: 1023px) {
-  .market-thesis {
-    gap: 48px;
-  }
-  .market-thesis-statement {
-    padding-left: 24px;
-  }
-}
-@media (max-width: 767px) {
-  .market-thesis {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .market-thesis-statement {
-    padding-left: 20px;
+  h1 {
+    font-size: 32px;
   }
 }
