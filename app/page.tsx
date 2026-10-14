@@ -33,9 +33,11 @@ export default function Home() {
       <section aria-labelledby="contact-heading">
         <h2 id="contact-heading">Contact</h2>
         <p>
-          Email:{" "}
-          <a href="mailto:kswaroop.hebbar@gmail.com">
-            kswaroop.hebbar@gmail.com
+          <a
+            href="mailto:kswaroop.hebbar@gmail.com"
+            title="Start a conversation with Bayes Intelligence"
+          >
+            Email: kswaroop.hebbar@gmail.com
           </a>
         </p>
       </section>
